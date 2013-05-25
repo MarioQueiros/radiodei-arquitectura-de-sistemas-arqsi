@@ -1,0 +1,9 @@
+c:\users\leniker\documents\visual studio 2012\Projects\MusicPreferences\Active_Record\bin\Debug\Active_Record.dll
+c:\users\leniker\documents\visual studio 2012\Projects\MusicPreferences\Active_Record\bin\Debug\Active_Record.pdb
+c:\users\leniker\documents\visual studio 2012\Projects\MusicPreferences\Active_Record\obj\Debug\Active_Record.csprojResolveAssemblyReference.cache
+c:\users\leniker\documents\visual studio 2012\Projects\MusicPreferences\Active_Record\obj\Debug\Active_Record.dll
+c:\users\leniker\documents\visual studio 2012\Projects\MusicPreferences\Active_Record\obj\Debug\Active_Record.pdb
+C:\Users\leniker\Dropbox\ARQSI\MusicPreferences\Active_Record\bin\Debug\Active_Record.dll
+C:\Users\leniker\Dropbox\ARQSI\MusicPreferences\Active_Record\bin\Debug\Active_Record.pdb
+C:\Users\leniker\Dropbox\ARQSI\MusicPreferences\Active_Record\obj\Debug\Active_Record.dll
+C:\Users\leniker\Dropbox\ARQSI\MusicPreferences\Active_Record\obj\Debug\Active_Record.pdb

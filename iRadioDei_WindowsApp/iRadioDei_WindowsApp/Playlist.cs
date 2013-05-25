@@ -1,0 +1,398 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data;
+using System.Collections;
+using System.Globalization;
+
+namespace iRadioDei_WindowsApp
+{
+    class Playlist : ActiveRecord
+    {
+        private string _name;
+        private DateTime _pl_date;
+        private int _id_user;
+
+        public Playlist()
+        {
+        }
+
+        public Playlist(int id, string name, DateTime date, int id_user)
+        {
+            this.myID = id;
+            this._name = name;
+            this._pl_date = date;
+            this._id_user = id_user;
+        }
+
+        protected Playlist(DataRow row)
+        {
+            this.myID = (int)row["id_playlist"];
+            this._name = (string)row["name"];
+            this._pl_date = (DateTime)row["pl_date"];
+            this._id_user = (int)row["id_user"];
+        }
+
+        public string getName { get { return _name; } }
+        public DateTime getPlDate { get { return _pl_date; } }
+        public int getIdUser { get { return _id_user; } }
+
+        public DataSet LoadAll()
+        {
+            try
+            {
+                DataSet ds = ExecuteQuery("select * from playlist");
+
+                return ds;
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return null;
+            }
+        }
+
+        public DataTable LoadPlaylistByUsername(string username)
+        {
+            try
+            {
+                DataSet ds = ExecuteQuery("select id_playlist, name, pl_date from playlist where id_user=(select id_user from users where username='" + username + "') and state='closed'");
+
+                DataTable dt = new DataTable();
+
+                dt.Columns.Add("ID", typeof(int));
+                dt.Columns.Add("Name", typeof(string));
+                dt.Columns.Add("Creation Date", typeof(DateTime));
+
+                foreach (DataRow r in ds.Tables[0].Rows)
+                {
+                    DataRow dtr = dt.NewRow();
+                    dtr["ID"] = (int)r["id_playlist"];
+                    dtr["Name"] = (string)r["name"];
+                    dtr["Creation Date"] = (DateTime)r["pl_date"];
+                    dt.Rows.Add(dtr);
+                }
+                return dt;
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return null;
+            }
+        }
+
+        public DataSet LoadPlaylistByUsername(string username, int x)
+        {
+            try
+            {
+                DataSet ds = ExecuteQuery("select id_playlist, name, pl_date from playlist where id_user=(select id_user from users where username='" + username + "') and state='closed'");
+                return ds;
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return null;
+            }
+        }
+
+        public DataTable LoadMusicByIdPlaylist(int id)
+        {
+            try
+            {
+                DataSet ds1 = ExecuteQuery("select id_music from playlist_music where id_playlist=" + id);
+
+                DataTable dt = new DataTable();
+
+                dt.Columns.Add("Name", typeof(string));
+                /* dt.Columns.Add("Artist", typeof(string));
+                 dt.Columns.Add("Album", typeof(DateTime));*/
+
+                foreach (DataRow r1 in ds1.Tables[0].Rows)
+                {
+                    DataSet ds2 = ExecuteQuery("select name from music where id_music=" + (int)r1["id_music"]);
+
+                    foreach (DataRow r2 in ds2.Tables[0].Rows)
+                    {
+                        DataRow dtr = dt.NewRow();
+                        dtr["Name"] = (string)r2["name"];
+                        dt.Rows.Add(dtr);
+                    }
+                }
+                return dt;
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return null;
+            }
+        }
+
+        public int CheckOpenPlaylist(string username)
+        {
+            try
+            {
+                DataSet ds = ExecuteQuery("select id_playlist from playlist where state='open' and id_user=(select id_user from users where username='" + username + "')");
+
+                if (ds.Tables[0].Rows.Count == 0)
+                {
+                    return -1;
+                }
+                else
+                {
+                    int id = -1;
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        id = (int)dr["id_playlist"];
+                    }
+                    return id;
+                }
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return -99;
+            }
+        }
+
+        public int CreatePlaylist(string name, string username)
+        {
+            try
+            {
+                DateTime dt = DateTime.Today;
+                if (dt.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    dt = dt.AddDays(-(int)dt.DayOfWeek).AddDays(1);
+                }
+                DataSet ds1 = ExecuteQuery("select id_user from [ARQSI36].[dbo].[users] where username='" + username + "'");
+                int q = 0;
+                foreach (DataRow dr in ds1.Tables[0].Rows)
+                {
+                    q = (int)dr["id_user"];
+                }
+                DataSet ds = ExecuteQuery("insert into [ARQSI36].[dbo].[playlist] (name, pl_date, id_user, state) values ('" + name + "', '" + dt + "', " + q + ", 'closed')SELECT id_playlist AS LastID FROM [ARQSI36].[dbo].[playlist] WHERE id_playlist = @@Identity");
+                q = 0;
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    q = (int)dr["LastID"];
+                }
+                return q;
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return -99;
+            }
+        }
+
+        public int CreatePlaylist(string username)
+        {
+            try
+            {
+                int q = ExecuteNonQuery("insert into playlist (name, id_user, state) values ('', (select id_user from users where username='" + username + "'), 'open')");
+
+                if (q == -1)
+                {
+                    return q;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return -99;
+            }
+        }
+
+        public int UpdatePlaylistName(string name, int id_playlist)
+        {
+            try
+            {
+                int q = ExecuteNonQuery("update playlist set name='" + name + "' where id_playlist=" + id_playlist);
+                if (q == -1)
+                {
+                    return q;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return -99;
+            }
+        }
+
+        public int SavePlaylistMusic(int id_music, int id_playlist)
+        {
+            try
+            {
+                int q = ExecuteNonQuery("Insert into playlist_music (id_playlist, id_music) values (" + id_playlist + ", " + id_music + ")");
+                if (q == -1)
+                {
+                    return q;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return -99;
+            }
+
+        }
+
+        public int ChangePlaylistState(int id)
+        {
+            try
+            {
+                int q = ExecuteNonQuery("update playlist set state='closed' where id_playlist=" + id);
+                if (q == -1)
+                {
+                    return q;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return -99;
+            }
+        }
+
+        public int DeleteMusicFromPlaylist(int id_music, int id_playlist)
+        {
+            try
+            {
+                int q = ExecuteNonQuery("Delete from playlist_music where id_music=" + id_music + " and id_playlist=" + id_playlist);
+                if (q == -1)
+                {
+                    return q;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return -99;
+            }
+        }
+
+        public List<string> GetMusicFromOpenPlaylist(int id_playlist)
+        {
+            try
+            {
+                DataSet ds = ExecuteQuery("select id_music from playlist_music where id_playlist=" + id_playlist);
+
+                List<string> list = new List<string>();
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    int id = (int)dr["id_music"];
+                    DataSet ds1 = ExecuteQuery("select name from music where id_music=" + id);
+
+                    foreach (DataRow dr1 in ds1.Tables[0].Rows)
+                    {
+                        list.Add((string)dr1["name"]);
+                    }
+                }
+                return list;
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return null;
+            }
+        }
+
+        public static int CheckPlaylistByUsername(string username)
+        {
+            try
+            {
+                var monday = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek).AddDays(1);
+                var saturday = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek).AddDays(6);
+
+                int day = monday.Day;
+                int month = monday.Month;
+                int year = monday.Year;
+
+                int day2 = saturday.Day;
+                int month2 = saturday.Month;
+                int year2 = saturday.Year;
+                DataSet ds = new DataSet();
+
+                if (day > 12 && day2 > 12)
+                {
+                    ds = ExecuteQuery("select id_playlist from [ARQSI36].[dbo].[playlist] where pl_date >= '" + month + "/" + day + "/" + year + "' and pl_date <= '" + month2 + "/" + day2 + "/" + year2 + "' and id_user=(select id_user from [ARQSI36].[dbo].[users] where username='" + username + "') and state='closed'");
+                }
+                else if (day > 12)
+                {
+                    ds = ExecuteQuery("select id_playlist from [ARQSI36].[dbo].[playlist] where pl_date >= '" + month + "/" + day + "/" + year + "' and pl_date <= '" + day2 + "/" + month2 + "/" + year2 + "' and id_user=(select id_user from [ARQSI36].[dbo].[users] where username='" + username + "') and state='closed'");
+                }
+                else if (day2 > 12)
+                {
+                    ds = ExecuteQuery("select id_playlist from [ARQSI36].[dbo].[playlist] where pl_date >= '" + day + "/" + month + "/" + year + "' and pl_date <= '" + month2 + "/" + day2 + "/" + year2 + "' and id_user=(select id_user from [ARQSI36].[dbo].[users] where username='" + username + "') and state='closed'");
+                }
+                else
+                {
+                    ds = ExecuteQuery("select id_playlist from [ARQSI36].[dbo].[playlist] where pl_date >= '" + day + "/" + month + "/" + year + "' and pl_date <= '" + day2 + "/" + month2 + "/" + year2 + "' and id_user=(select id_user from [ARQSI36].[dbo].[users] where username='" + username + "') and state='closed'");
+                }
+
+                if (ds.Tables[0].Rows.Count == 0)
+                {
+                    //pode guardar playlist
+                    return 1;
+                }
+                else
+                {
+                    //nao pode guardar playlist
+                    return -1;
+                }
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return -99;
+            }
+        }
+
+        public static int insertVote(int id_playlist)
+        {
+            try
+            {
+                int q = ExecuteNonQuery("INSERT INTO [ARQSI36].[dbo].[vote]([id_playlist],[n_votes]) VALUES(" + id_playlist + " ,0)");
+                if (q == -1)
+                {
+                    return q;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                return -99;
+            }
+        }
+
+        public override void Save()
+        {
+            //throw new NotImplementedException();
+        }
+    }
+}

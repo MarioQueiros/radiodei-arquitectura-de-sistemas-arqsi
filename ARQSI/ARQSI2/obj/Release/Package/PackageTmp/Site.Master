@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ARQSI2.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Forms Authentication, Authorization, and User Accounts</title>
+    <link href="Styles.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        .auto-style2 {
+            font-size: medium;
+            color: #FFFFFF;
+        }
+
+        .auto-style3 {
+            font-size: large;
+        }
+
+        .login_form {
+            float: right;
+        }
+
+        #login_main {
+            font-size: medium;
+            text-align: right;
+            color: #FFFFFF;
+        }
+
+        .auto-style4 {
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+
+        .auto-style5 {
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+
+        .hiddencol {
+            display: none;
+        }
+
+        body {
+            background-image: url(green-fibers.png);
+        }
+        
+        .auto-style6 {
+            color: #FFFFFF;
+        }
+        .auto-style7 {
+            font-size: medium;
+            color: #FFFFFF;
+        }
+        #HeadLoginStatus {
+            color: #FFFFFF;
+        }
+        
+        .auto-style8 {
+            color: #FEFFFF;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+
+        <form id="form1" runat="server">
+
+            <div id="header" class="auto-style1">
+                <span class="auto-style6">
+                <strong style="text-align: right">iRadioDEI</strong></span><br />
+                <div id="login_main" class="login_main">
+                    <asp:ContentPlaceHolder ID="LoginContent" runat="server">
+                        <asp:LoginView ID="LoginView1" runat="server" OnViewChanged="LoginView1_ViewChanged">
+                            <LoggedInTemplate>
+                                Welcome,
+                                <asp:LoginName ID="LoginName1" runat="server" />
+                                <br />
+                                <asp:LoginStatus ID="LoginStatus1" runat="server" OnLoggingOut="LoginStatus1_LoggingOut" style="color: #FFFFFF" />
+                                
+                            </LoggedInTemplate>
+                            <AnonymousTemplate>
+                                <a href="~/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a>
+                            </AnonymousTemplate>
+                        </asp:LoginView>
+                    </asp:ContentPlaceHolder>
+                </div>
+                <br />
+                <strong style="font-size: medium; text-align: right">
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Default.aspx" Style="font-size: medium" CssClass="auto-style6">Home</asp:HyperLink>
+                    &nbsp;&nbsp; </strong><span class="auto-style3">
+                        <asp:Label ID="Label4" runat="server" CssClass="auto-style4" Text="|"></asp:Label>
+                    </span><strong style="font-size: xx-large">&nbsp;&nbsp;
+                <asp:HyperLink ID="HyperLink4" runat="server" CssClass="auto-style7" NavigateUrl="Playlists.aspx">Playlists</asp:HyperLink>
+                        &nbsp;&nbsp; </strong><span class="auto-style3">
+                            <asp:Label ID="Label3" runat="server" CssClass="auto-style5" Text="|"></asp:Label>
+                        </span><strong style="font-size: xx-large">&nbsp;&nbsp;
+                <asp:HyperLink ID="HyperLink6" runat="server" CssClass="auto-style7" NavigateUrl="CreatePlaylist.aspx">Create Playlist</asp:HyperLink>
+                            &nbsp;&nbsp; <span class="auto-style3">
+                            <asp:Label ID="Label5" runat="server" CssClass="auto-style5" Text="|"></asp:Label>
+                        &nbsp;&nbsp;
+                        <asp:HyperLink ID="HyperLink7" runat="server" CssClass="auto-style7" NavigateUrl="Widget.aspx">Widget</asp:HyperLink>
+                            &nbsp;&nbsp;
+                            <asp:Label ID="Label7" runat="server" CssClass="auto-style5" Text="|"></asp:Label>
+                        &nbsp;&nbsp;
+                        </span>
+                <asp:HyperLink ID="HyperLink5" runat="server" CssClass="auto-style7" NavigateUrl="Musics.aspx">Musics</asp:HyperLink>
+                            &nbsp;&nbsp; </strong><span class="auto-style3"><strong>
+                                <asp:Label ID="Label2" runat="server" Text="|" style="color: #FFFFFF"></asp:Label>
+                            </strong></span><strong style="font-size: xx-large">&nbsp;&nbsp;
+                <asp:HyperLink ID="HyperLink2" runat="server" CssClass="auto-style7" NavigateUrl="Login.aspx">Login</asp:HyperLink>
+                                &nbsp;&nbsp; </strong><span class="auto-style3"><strong>
+                                    <asp:Label ID="Label1" runat="server" Text="|" style="color: #FFFFFF"></asp:Label>
+                                </strong></span><strong style="font-size: xx-large">&nbsp;&nbsp;
+                <asp:HyperLink ID="HyperLink3" runat="server" CssClass="auto-style2" NavigateUrl="Register.aspx">Register</asp:HyperLink>
+                                </strong>
+            </div>
+
+            <div id="content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    <!-- Page-specific content will go here... -->
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div id="footer">
+                
+                <br />
+                <span class="auto-style6">____________________________________________</span><br class="auto-style6" />
+                <br class="auto-style6" />
+                <span class="auto-style8"><strong>@ 2012  - Created by </strong></span> <a href="mailto:1100638@isep.ipp.pt"><span class="auto-style8"><strong style="color: #FFFFFF">1100638</strong></span></a><span class="auto-style8"><strong> &amp; </strong></span> <a href="mailto:1101340@isep.ipp.pt"><span class="auto-style6"><strong>1101340</strong></span></a><span class="auto-style8"><strong> at ISEP
+                
+            </strong></span>
+                
+            </div>
+        </form>
+    </div>
+</body>
+</html>

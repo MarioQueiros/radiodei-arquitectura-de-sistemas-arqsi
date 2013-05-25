@@ -1,0 +1,212 @@
+/**********************************************************************************************/
+/* Form Design by: http://livetools.uiparade.com/index.html                                   */
+/* Table Design by: http://www.red-team-design.com/practical-css3-tables-with-rounded-corners */
+/**********************************************************************************************/
+
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin-left:40px;
+	margin-right:auto;
+	margin-top: 5px;
+}
+
+table {
+	*border-collapse: collapse; /* IE7 and lower */
+	border-spacing: 0;
+	width: 100%;
+}
+
+/*******/
+/* DIV */
+/*******/
+#full-screen-background-image {
+	z-index: -999;
+	min-height: 100%;
+	min-width: 1024px;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+/*********/
+/* CLASS */
+/*********/
+
+.hidden { visibility: hidden; }
+
+.title {
+	text-shadow: #addc7e 0 1px 0;
+	font-size: 50px;
+	margin: 0 0 0px 0;
+	font-weight: bold;
+	margin-left:9em;
+	color: #900000 ;
+}
+
+.form-container h2 {
+	text-shadow: #fdf2e4 0 1px 0;
+	font-size: 18px;
+	margin: 0 0 10px 0;
+	font-weight: bold;
+	text-align: center;
+}
+
+.submit-container {
+	margin: 16px 0px;
+	text-align: left;
+}
+
+.list-container {
+	margin-left:10em;
+	float: left;
+	border: 1px solid #989898 ;
+	background: #585858;
+	background: -webkit-gradient(linear, left top, left bottom, from(#989898 ),
+	to(#585858) );
+	background: -webkit-linear-gradient(top, #989898 , #585858);
+	background: -moz-linear-gradient(top, #989898 , #585858);
+	background: -ms-linear-gradient(top, #989898 , #585858);
+	background: -o-linear-gradient(top, #989898 , #585858);
+	background-image: -ms-linear-gradient(top, #989898  0%, #585858 100%);
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: rgba(000, 000, 000, 0.9) 0 1px 2px, inset rgba(255, 255, 255, 0.4) 0 0px 0;
+	-moz-box-shadow: rgba(000, 000, 000, 0.9) 0 1px 2px, inset rgba(255, 255, 255, 0.4) 0 0px 0;
+	box-shadow: rgba(000, 000, 000, 0.9) 0 1px 2px, inset rgba(255, 255, 255, 0.4) 0 0px 0;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	text-decoration: none;
+	vertical-align: middle;
+	min-width: 180px;
+	padding: 20px;
+	width: 280px;
+}
+
+.form-list {
+	color: #680000 ;
+	text-shadow: #FF0000  0 1px 0;
+}
+
+.submit-button {
+	border: 1px solid #000000;
+	background: #110000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#C00000),
+	to(#110000) );
+	background: -webkit-linear-gradient(top, #C00000 , #110000);
+	background: -moz-linear-gradient(top, #C00000, #110000);
+	background: -ms-linear-gradient(top, #C00000, #110000);
+	background: -o-linear-gradient(top, #C00000, #110000);
+	background-image: -ms-linear-gradient(top, #C00000 0%, #110000 100%);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+	-moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+	box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+	text-shadow: #addc7e 0 1px 0;
+	color: #F00000 ;
+	font-family: helvetica, serif;
+	padding: 8.5px 18px;
+	font-size: 14px;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+.submit-button:hover {
+	border: 1px solid #000000;
+	text-shadow: #31540c 0 1px 0;
+	background: #110000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#C00000),
+	to(#110000) );
+	background: -webkit-linear-gradient(top, #C00000, #110000);
+	background: -moz-linear-gradient(top, #C00000, #110000);
+	background: -ms-linear-gradient(top, #C00000, #110000);
+	background: -o-linear-gradient(top, #C00000, #110000);
+	background-image: -ms-linear-gradient(top, #C00000 0%, #110000 100%);
+	color: #fff;
+}
+
+.submit-button:active {
+	text-shadow: #31540c 0 1px 0;
+	border: 1px solid #800000 ;
+	background: #800000 ;
+	background: -webkit-gradient(linear, left top, left bottom, from(#110000),
+	to(#110000) );
+	background: -webkit-linear-gradient(top, #110000, #C00000);
+	background: -moz-linear-gradient(top, #110000, #C00000);
+	background: -ms-linear-gradient(top, #110000, #C00000);
+	background: -o-linear-gradient(top, #110000, #C00000);
+	background-image: -ms-linear-gradient(top, #110000 0%, #C00000 100%);
+	color: #fff;
+}
+
+.form-title {
+	color: #680000 ;
+	text-shadow: #FF0000  0 1px 0;
+}
+
+.form-field:focus {
+	background: #000;
+	color: #725129;
+}
+
+.form-container {
+	margin-left:15em;
+	float: left;
+	border: 1px solid #989898 ;
+	background: #585858;
+	background: -webkit-gradient(linear, left top, left bottom, from(#989898 ),
+	to(#585858) );
+	background: -webkit-linear-gradient(top, #989898 , #585858);
+	background: -moz-linear-gradient(top, #989898 , #585858);
+	background: -ms-linear-gradient(top, #989898 , #585858);
+	background: -o-linear-gradient(top, #989898 , #585858);
+	background-image: -ms-linear-gradient(top, #989898  0%, #585858 100%);
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: rgba(000, 000, 000, 0.9) 0 1px 2px, inset rgba(255, 255, 255, 0.4) 0 0px 0;
+	-moz-box-shadow: rgba(000, 000, 000, 0.9) 0 1px 2px, inset rgba(255, 255, 255, 0.4) 0 0px 0;
+	box-shadow: rgba(000, 000, 000, 0.9) 0 1px 2px, inset rgba(255, 255, 255, 0.4) 0 0px 0;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	text-decoration: none;
+	vertical-align: middle;
+	min-width: 180px;
+	padding: 20px;
+	width: 200px;
+}
+
+.form-field {
+	border: 1px solid #c9b7a2;
+	background: #383838;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #996600;
+	-webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(000, 000, 000, 0.7) 0 1px 1px;
+	-moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(000, 000, 000, 0.7) 0 1px 1px;
+	box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(000, 000, 000, 0.7) 0 1px 1px;
+	padding: 8px;
+	margin-bottom: 20px;
+	width: 150px;
+}
+
+.combobox {
+	border: 1px solid #c9b7a2;
+	background: #383838;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #996600;
+	-webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(000, 000, 000, 0.7) 0 1px 1px;
+	-moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(000, 000, 000, 0.7) 0 1px 1px;
+	box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(000, 000, 000, 0.7) 0 1px 1px;
+	padding: 8px;
+	margin-bottom: 20px;
+	width: 170px;
+}
+

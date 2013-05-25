@@ -1,0 +1,17 @@
+create table MP_music (
+	id_music int PRIMARY KEY IDENTITY,
+	name varchar(255)
+);
+
+create table MP_playlist (
+	id_playlist int PRIMARY KEY IDENTITY,
+	location varchar(255)
+);
+
+create table MP_playlist_music (
+	id_playlist int,
+	id_music int,
+	PRIMARY KEY (id_playlist, id_music),
+	FOREIGN KEY (id_playlist) references MP_playlist(id_playlist),
+	FOREIGN KEY (id_music) references MP_music(id_music)
+);

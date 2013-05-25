@@ -1,0 +1,54 @@
+create table users (
+	id_user int PRIMARY KEY IDENTITY,
+	username varchar(255) NOT NULL,
+	pass varchar(255) NOT NULL,
+	email varchar(255) NOT NULL,
+	location varchar(255) NOT NULL,
+	type varchar(255) NOT NULL
+);
+
+create table playlist (
+	id_playlist int PRIMARY KEY IDENTITY,
+	name varchar(255),
+	pl_date date,
+	id_user int NOT NULL,
+	FOREIGN KEY (id_user) references users(id_user)
+);
+
+create table artist (
+	id_artist int PRIMARY KEY IDENTITY,
+	name varchar(255)
+);
+
+create table album (
+	id_album int PRIMARY KEY IDENTITY,
+	name varchar(255),
+	id_artist int NOT NULL
+	FOREIGN KEY (id_artist) references artist(id_artist)
+);
+
+create table music (
+	id_music int PRIMARY KEY IDENTITY,
+	name varchar(255),
+	launch_year int,
+	id_album int NOT NULL
+	FOREIGN KEY (id_album) references album(id_album)
+);
+
+create table playlist_music (
+	id_playlist int,
+	id_music int,
+	PRIMARY KEY (id_playlist, id_music),
+	FOREIGN KEY (id_playlist) references playlist(id_playlist),
+	FOREIGN KEY (id_music) references music(id_music)
+);
+
+create table music_artist (
+	id_artist int,
+	id_music int,
+	PRIMARY KEY (id_artist, id_music),
+	FOREIGN KEY (id_artist) references artist(id_artist),
+	FOREIGN KEY (id_music) references music(id_music)
+);
+
+

@@ -1,0 +1,9 @@
+C:\Users\leniker\Dropbox\ARQSI\ARQSI\Active_Record\bin\Debug\Active_Record.dll
+C:\Users\leniker\Dropbox\ARQSI\ARQSI\Active_Record\bin\Debug\Active_Record.pdb
+C:\Users\leniker\Dropbox\ARQSI\ARQSI\Active_Record\obj\Debug\Active_Record.csprojResolveAssemblyReference.cache
+C:\Users\leniker\Dropbox\ARQSI\ARQSI\Active_Record\obj\Debug\Active_Record.dll
+C:\Users\leniker\Dropbox\ARQSI\ARQSI\Active_Record\obj\Debug\Active_Record.pdb
+C:\Users\MpApQ\Desktop\Dropbox\ARQSI\ARQSI\Active_Record\bin\Debug\Active_Record.dll
+C:\Users\MpApQ\Desktop\Dropbox\ARQSI\ARQSI\Active_Record\bin\Debug\Active_Record.pdb
+C:\Users\MpApQ\Desktop\Dropbox\ARQSI\ARQSI\Active_Record\obj\Debug\Active_Record.dll
+C:\Users\MpApQ\Desktop\Dropbox\ARQSI\ARQSI\Active_Record\obj\Debug\Active_Record.pdb

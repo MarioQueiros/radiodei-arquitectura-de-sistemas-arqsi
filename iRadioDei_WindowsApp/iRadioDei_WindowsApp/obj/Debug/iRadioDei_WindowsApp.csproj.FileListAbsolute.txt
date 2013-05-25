@@ -1,0 +1,20 @@
+c:\users\leniker\documents\visual studio 2012\Projects\iRadioDei_WindowsApp\iRadioDei_WindowsApp\bin\Debug\iRadioDei_WindowsApp.exe.config
+c:\users\leniker\documents\visual studio 2012\Projects\iRadioDei_WindowsApp\iRadioDei_WindowsApp\bin\Debug\iRadioDei_WindowsApp.exe
+c:\users\leniker\documents\visual studio 2012\Projects\iRadioDei_WindowsApp\iRadioDei_WindowsApp\bin\Debug\iRadioDei_WindowsApp.pdb
+c:\users\leniker\documents\visual studio 2012\Projects\iRadioDei_WindowsApp\iRadioDei_WindowsApp\obj\Debug\iRadioDei_WindowsApp.csprojResolveAssemblyReference.cache
+c:\users\leniker\documents\visual studio 2012\Projects\iRadioDei_WindowsApp\iRadioDei_WindowsApp\obj\Debug\iRadioDei_WindowsApp.Properties.Resources.resources
+c:\users\leniker\documents\visual studio 2012\Projects\iRadioDei_WindowsApp\iRadioDei_WindowsApp\obj\Debug\iRadioDei_WindowsApp.csproj.GenerateResource.Cache
+c:\users\leniker\documents\visual studio 2012\Projects\iRadioDei_WindowsApp\iRadioDei_WindowsApp\obj\Debug\iRadioDei_WindowsApp.exe
+c:\users\leniker\documents\visual studio 2012\Projects\iRadioDei_WindowsApp\iRadioDei_WindowsApp\obj\Debug\iRadioDei_WindowsApp.pdb
+C:\Users\leniker\Documents\Visual Studio 2012\Projects\iRadioDei_WindowsApp\iRadioDei_WindowsApp\obj\Debug\iRadioDei_WindowsApp.Form1.resources
+C:\Users\leniker\Dropbox\ARQSI\iRadioDei_WindowsApp\iRadioDei_WindowsApp\bin\Debug\iRadioDei_WindowsApp.exe.config
+C:\Users\leniker\Dropbox\ARQSI\iRadioDei_WindowsApp\iRadioDei_WindowsApp\bin\Debug\iRadioDei_WindowsApp.exe
+C:\Users\leniker\Dropbox\ARQSI\iRadioDei_WindowsApp\iRadioDei_WindowsApp\bin\Debug\iRadioDei_WindowsApp.pdb
+C:\Users\leniker\Dropbox\ARQSI\iRadioDei_WindowsApp\iRadioDei_WindowsApp\obj\Debug\iRadioDei_WindowsApp.Form1.resources
+C:\Users\leniker\Dropbox\ARQSI\iRadioDei_WindowsApp\iRadioDei_WindowsApp\obj\Debug\iRadioDei_WindowsApp.Properties.Resources.resources
+C:\Users\leniker\Dropbox\ARQSI\iRadioDei_WindowsApp\iRadioDei_WindowsApp\obj\Debug\iRadioDei_WindowsApp.csproj.GenerateResource.Cache
+C:\Users\leniker\Dropbox\ARQSI\iRadioDei_WindowsApp\iRadioDei_WindowsApp\obj\Debug\iRadioDei_WindowsApp.exe
+C:\Users\leniker\Dropbox\ARQSI\iRadioDei_WindowsApp\iRadioDei_WindowsApp\obj\Debug\iRadioDei_WindowsApp.pdb
+C:\Users\MpApQ\Desktop\Dropbox\ARQSI\Trabalho\iRadioDei_WindowsApp\iRadioDei_WindowsApp\bin\Debug\iRadioDei_WindowsApp.exe.config
+C:\Users\MpApQ\Desktop\Dropbox\ARQSI\Trabalho\iRadioDei_WindowsApp\iRadioDei_WindowsApp\obj\Debug\iRadioDei_WindowsApp.exe
+C:\Users\MpApQ\Desktop\Dropbox\ARQSI\Trabalho\iRadioDei_WindowsApp\iRadioDei_WindowsApp\obj\Debug\iRadioDei_WindowsApp.pdb

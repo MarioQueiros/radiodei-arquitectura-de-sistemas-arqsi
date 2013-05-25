@@ -1,0 +1,6 @@
+C:\Users\MpApQ\Desktop\Dropbox\ARQSI\ARQSI\iRadioDei_Service\bin\iRadioDei_Service.dll
+C:\Users\MpApQ\Desktop\Dropbox\ARQSI\ARQSI\iRadioDei_Service\bin\iRadioDei_Service.pdb
+C:\Users\MpApQ\Desktop\Dropbox\ARQSI\ARQSI\iRadioDei_Service\bin\Active_Record.dll
+C:\Users\MpApQ\Desktop\Dropbox\ARQSI\ARQSI\iRadioDei_Service\obj\Debug\iRadioDei_Service.csprojResolveAssemblyReference.cache
+C:\Users\MpApQ\Desktop\Dropbox\ARQSI\ARQSI\iRadioDei_Service\obj\Debug\iRadioDei_Service.dll
+C:\Users\MpApQ\Desktop\Dropbox\ARQSI\ARQSI\iRadioDei_Service\obj\Debug\iRadioDei_Service.pdb

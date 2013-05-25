@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="MusicPreferences.MusicPreferences_Service" CodeBehind="MusicPreferences_Service.svc.cs" %>
